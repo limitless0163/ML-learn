@@ -143,8 +143,8 @@ with tqdm(range(max_epoch)) as pbar:
         mlp_pred = test_mlp(mlp, x_test[0], len(y_test))
         gru_test_loss = criterion(gru_pred, y_test).item()
         mlp_test_loss = criterion(mlp_pred, y_test).item()
-        gru_test_losses.append(gru_test_losses)
-        mlp_test_losses.append(mlp_test_losses)
+        gru_test_losses.append(gru_test_loss)
+        mlp_test_losses.append(mlp_test_loss)
 
         pbar.set_postfix({
             'Epoch': epoch,
